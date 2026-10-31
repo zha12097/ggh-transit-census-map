@@ -53,14 +53,8 @@ The map uses a simplified geometry for interactive performance, and the transit 
 ```text
 index.html                 Static interactive map and embedded public display data
 README.md                  Project description
-.gitignore                 Local Git exclusions (not a privacy mechanism)
-.nojekyll                  GitHub Pages Jekyll bypass
 docs/DATA_AND_METHODS.md   Data provenance, definitions and limitations
 docs/MAINTENANCE.md        Deployment and checking instructions
-tests/check_map.py         Static validation of embedded data and geometry
-tests/test_interactions.py Optional mocked-Leaflet browser smoke test
-tests/leaflet_stub.js      Minimal Leaflet test double
-.github/workflows/check.yml  Static checks on each push
 ```
 
 ## Attribution
