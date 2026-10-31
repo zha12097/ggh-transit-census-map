@@ -353,8 +353,8 @@ aside{width:322px;min-width:322px;background:rgba(255,255,255,.985);border-right
       <label class="switchrow layer-row"><span><input id="routesOn" type="checkbox" checked><span class="type-icon">━</span>Transit routes</span></label>
       <label class="switchrow layer-row"><span><input id="municipalitiesOn" type="checkbox" checked><span class="layer-color" aria-hidden="true"></span>Municipal boundaries</span><span class="layer-count" id="municipalitiesCount">99</span></label>
       <div class="boundary-opacity-control" role="group" aria-label="Municipal polygon fill opacity">
-        <div class="boundary-opacity-header"><label for="municipalityOpacity">Municipal fill opacity</label><output id="municipalityOpacityValue" for="municipalityOpacity">100%</output></div>
-        <input id="municipalityOpacity" type="range" min="0" max="100" step="5" value="100" aria-label="Municipal polygon fill opacity" title="100% completely covers the basemap within municipalities; 0% reveals it. Boundary outlines remain fully opaque.">
+        <div class="boundary-opacity-header"><label for="municipalityOpacity">Municipal fill opacity</label><output id="municipalityOpacityValue" for="municipalityOpacity">50%</output></div>
+        <input id="municipalityOpacity" type="range" min="0" max="100" step="5" value="50" aria-label="Municipal polygon fill opacity" title="100% completely covers the basemap within municipalities; 0% reveals it. Boundary outlines remain fully opaque.">
       </div>
       <div class="switchrow layer-row label-row"><span>Municipality labels</span><label class="toggle-switch" title="Toggle English municipality labels"><input id="municipalityLabelsOn" type="checkbox" role="switch" aria-label="Show municipality English name labels" aria-checked="false"><span class="toggle-slider" aria-hidden="true"></span></label></div>
     </div>
@@ -633,7 +633,7 @@ function censusFill(value){
  let i=0;while(i<4 && value>censusCuts[i])i++;
  return palette[i];
 }
-let municipalFillOpacity=1; // True 0–1 fill alpha: at 100%, municipal polygons completely cover the basemap.
+let municipalFillOpacity=0.5; // True 0–1 fill alpha: at 100%, municipal polygons completely cover the basemap.
 function municipalityStyle(feature){
  const key=currentCensusKey(),on=key!=='none',value=censusRecord(feature.properties)?.[key];
  return {color:'#65849d',weight:1.05,opacity:1,fillColor:on?censusFill(value):'#68abc1',fillOpacity:municipalFillOpacity};
@@ -904,7 +904,7 @@ document.querySelector('#municipalityOpacity').addEventListener('input',event=>{
 });
 document.querySelector('#resetView').onclick=()=>map.fitBounds(gghBounds,{padding:[22,22]});
 document.querySelector('#transitView').onclick=()=>map.fitBounds(transitBounds,{padding:[22,22]});
-document.querySelector('#resetFilters').onclick=()=>{document.querySelectorAll('input[type="checkbox"]').forEach(x=>x.checked=x.id!=='municipalityLabelsOn');municipalFillOpacity=1;document.querySelector('#municipalityOpacity').value='100';document.querySelector('#municipalityOpacityValue').textContent='100%';municipalitiesLayer.setStyle(municipalityStyle);document.querySelector('#censusLevelMetric').value='none';document.querySelector('#censusRateMetric').value='none';document.querySelector('#censusIndustryMetric').value='none';setCensusYear(2021);document.querySelector('#search').value='';draw();map.fitBounds(gghBounds,{padding:[22,22]});};
+document.querySelector('#resetFilters').onclick=()=>{document.querySelectorAll('input[type="checkbox"]').forEach(x=>x.checked=x.id!=='municipalityLabelsOn');municipalFillOpacity=0.5;document.querySelector('#municipalityOpacity').value='50';document.querySelector('#municipalityOpacityValue').textContent='50%';municipalitiesLayer.setStyle(municipalityStyle);document.querySelector('#censusLevelMetric').value='none';document.querySelector('#censusRateMetric').value='none';document.querySelector('#censusIndustryMetric').value='none';setCensusYear(2021);document.querySelector('#search').value='';draw();map.fitBounds(gghBounds,{padding:[22,22]});};
 draw();
 </script><script>
 (function(){
