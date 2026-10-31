@@ -28,9 +28,7 @@ The Census interface provides **57 indicators in each of 2016 and 2021**, groupe
 
 The GGH municipal boundary layer was prepared for this project from Statistics Canada's publicly available CSD boundary data. The selection covers 99 municipalities and is a project-specific geographic definition; it should not be interpreted as an official Statistics Canada GGH delineation.
 
-**The source CSD boundaries and the author-derived GGH boundary layer are open for reuse and redistribution**, with appropriate attribution to Statistics Canada and to this project for the municipal selection and processing. The source data are covered by the [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/terms-conditions/open-licence). The exact release year of the CSD boundary file used for this particular project remains to be confirmed; no specific source year is asserted here.
-
-The simplified boundary geometry is included within the public HTML map. A standalone boundary download is not included in this repository. A small polygon-topology defect affecting Ramara was corrected in this release by retaining the valid polygon geometry and excluding a zero-area line remnant introduced by simplification.
+**The source CSD boundaries and the author-derived GGH boundary layer are open for reuse and redistribution**, with appropriate attribution to Statistics Canada and to this project for the municipal selection and processing. The source data are covered by the [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/terms-conditions/open-licence).
 
 ### Data availability
 
@@ -38,15 +36,9 @@ The original RTP GIS source files, project-specific Census extracts, and interme
 
 The underlying 2016 and 2021 Census publications remain publicly available from Statistics Canada under its own licence. This project's distribution choices do not limit access to those publications.
 
-**Information included in the map itself is public.** The single HTML page embeds simplified municipal and transit geometries and selected Census values in order to display them. A website visitor can inspect or extract those values; the absence of separately downloadable data files does not make the embedded content confidential.
-
 ## Running and maintaining the map
 
 Open the [website](https://zha12097.github.io/ggh-transit-census-map/) using a modern browser. No installation is needed. The standalone `index.html` is the GitHub Pages entry point. Leaflet and OpenStreetMap tiles are loaded over the internet, so an internet connection is required to view the basemap.
-
-For local testing, serve the repository over HTTP, for example with `python -m http.server 8000`, and visit `http://localhost:8000`. Avoid relying on `file://` for tile-service testing.
-
-To publish this repository on GitHub Pages, configure **Settings → Pages → Deploy from a branch → main / (root)**. To update the website, replace `index.html` and commit the change. Additional details and test commands are provided in [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md).
 
 ## Interpretation and limitations
 
@@ -54,7 +46,7 @@ The 2016 and 2021 observations are mapped to the same project-derived municipal 
 
 The industry measures describe the resident labour force classified by industry. **They are not counts of jobs or workplaces located within the municipality.** The source Census years also use different NAICS reference versions (2012 and 2017). Interpret differences between industry counts accordingly.
 
-The map uses a simplified geometry for interactive performance, and the transit inventory represents a planning dataset rather than a live schedule or inventory of completed service. This interface is for descriptive exploration, not causal inference or operational service decisions. The external Leaflet library and OpenStreetMap tile service are subject to availability and service policy.
+The map uses a simplified geometry for interactive performance, and the transit inventory represents a planning dataset rather than a live schedule or inventory of completed service. This interface is for descriptive exploration, not causal inference or operational service decisions.
 
 ## Repository contents
 
@@ -70,8 +62,6 @@ tests/test_interactions.py Optional mocked-Leaflet browser smoke test
 tests/leaflet_stub.js      Minimal Leaflet test double
 .github/workflows/check.yml  Static checks on each push
 ```
-
-The repository does not include a `data/` directory or the original source files. The included tests operate on the publicly embedded contents of `index.html`.
 
 ## Attribution
 
