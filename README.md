@@ -10,7 +10,7 @@ The map is a descriptive reference. It does not represent real-time transit oper
 
 The transit inventory contains 387 points and 127 route features from the Regional Transportation Plan (RTP) GIS inputs. Features can be filtered by project status and technology. Both filter groups offer **All** and **None** controls; technology selections for point and line layers are independent.
 
-Municipal boundaries cover 99 Census Subdivisions (CSDs) selected for this GGH map. Boundaries can be turned on or off. A separate switch controls municipality names. The **Municipal fill opacity** slider runs from 0% (transparent) to 100% (fully opaque); the boundary outlines remain at 100% opacity. At 100%, polygons hide the OpenStreetMap basemap *inside* municipality boundaries. The OpenStreetMap basemap can also be switched off independently.
+Municipal boundaries cover 99 Census Subdivisions (CSDs) selected for this GGH map. Boundaries can be turned on or off. A separate switch controls municipality names.
 
 The Census interface provides **57 indicators in each of 2016 and 2021**, grouped into counts and levels, percentages and rates, and resident labour force by industry. Selecting an indicator shades the municipalities using five quantile classes calculated for the selected year. Clicking a municipality displays the Census values and geographic identifiers. Census selections are independent of the transit filters.
 
