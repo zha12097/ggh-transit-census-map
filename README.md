@@ -54,7 +54,6 @@ The map uses a simplified geometry for interactive performance, and the transit 
 index.html                 Static interactive map and embedded public display data
 README.md                  Project description
 docs/DATA_AND_METHODS.md   Data provenance, definitions and limitations
-docs/MAINTENANCE.md        Deployment and checking instructions
 ```
 
 ## Attribution
