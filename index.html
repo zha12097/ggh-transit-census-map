@@ -371,7 +371,8 @@ aside{width:322px;min-width:322px;background:rgba(255,255,255,.985);border-right
 .legend-name{min-width:0;overflow-wrap:anywhere}
 .legend-empty{color:#a0a1a7;font-size:10.5px;font-style:italic;padding:5px 0}
 .line-legend-details{border-top:1px solid #ececef;margin-top:10px;padding-top:9px}
-.line-legend-details summary{cursor:pointer;font-weight:640;color:#484a52;font-size:10.8px;margin-bottom:9px}
+.line-legend-details summary{cursor:pointer;font-weight:640;color:#484a52;font-size:10.8px;margin-bottom:0}
+.line-legend-details[open] summary{margin-bottom:9px}
 .line-legend-details summary span{font-weight:400;color:#92929a;margin-left:3px}
 .line-legend-details .line-search{padding:7px 9px}
 .line-legend-list{max-height:min(30dvh,235px);overflow-y:auto;scrollbar-width:thin;padding-top:8px}
@@ -546,7 +547,7 @@ aside{width:322px;min-width:322px;background:rgba(255,255,255,.985);border-right
   <div id="transitLegendContents">
     <div class="transit-legend-subtitle">Stations &amp; stops <span class="muted" id="pointLegendCount"></span></div>
     <div id="pointTypeLegend" class="legend-list"></div>
-    <details class="line-legend-details" open>
+    <details class="line-legend-details">
       <summary>Transit lines by name <span id="lineLegendCount"></span></summary>
       <input id="lineLegendSearch" class="line-search" type="search" placeholder="Search colours…" aria-label="Search line names in legend">
       <div id="lineNameLegend" class="legend-list line-legend-list"></div>
